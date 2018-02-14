@@ -35,6 +35,8 @@ roadster=Orbit.from_classical(attractor=Sun,
                               epoch=date)
 for date in days_as:
     
+    apophis_orbit = neows.orbit_from_name('99942')
+    spacex = neows.orbit_from_name('-143205')
     op.orbits.clear()
     earth = Orbit.from_body_ephem(Earth, date)
     mars = Orbit.from_body_ephem(Mars, date)
@@ -42,8 +44,11 @@ for date in days_as:
     op.plot(earth, label=Earth)
     op.plot(mars, label=Mars)
     op.plot(roadster, label='Roadster')
+    op.plot(apophis_orbit, label='Apophis')
     op._redraw()
     plt.pause(0.01)
 
+    
+input('type to exit')
 
 #op.plot(Orbit.from_body_ephem(Mars, time.Time("2018-07-28 12:00", scale='utc')), label=Mars)
