@@ -51,4 +51,4 @@ for date in days_as:
     
 input('type to exit')
 
-#op.plot(Orbit.from_body_ephem(Mars, time.Time("2018-07-28 12:00", scale='utc')), label=Mars)
+op.plot(Orbit.from_body_ephem(Mars, time.Time("2018-07-28 12:00", scale='utc')), label=Mars)
